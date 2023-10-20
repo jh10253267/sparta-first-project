@@ -2,6 +2,7 @@ package kr.sparta.ui;
 
 import kr.sparta.domain.Basket;
 import kr.sparta.domain.Product;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
@@ -9,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BasketUi {
-    private BufferedReader in;
+    private final BufferedReader in;
     private OrderConfirmUi orderConfirmUi = OrderConfirmUi.getInstance();
-    private static List<Product> productList = new ArrayList<>();
+    private static final List<Product> productList = new ArrayList<>();
     private static Basket basket = new Basket(productList);
     private static int totalPrice = 0;
 
@@ -19,7 +20,8 @@ public class BasketUi {
     private BasketUi() {
         this.in = new BufferedReader(new InputStreamReader(System.in));
     }
-    private static BasketUi instance = new BasketUi();
+
+    private static final BasketUi instance = new BasketUi();
 
     public static BasketUi getInstance() {
         return instance;
@@ -27,7 +29,7 @@ public class BasketUi {
 
     public void printMyBasket() throws InterruptedException, SQLException {
         int totalBasketPrice = basket.getTotalBasketPrice();
-        while(true) {
+        while (true) {
             System.out.println("--------------------------------------------");
             System.out.println("지금과 같이 주문하시겠습니까?");
             System.out.println();
@@ -61,8 +63,9 @@ public class BasketUi {
             }
         }
     }
+
     public void clear() {
-        while(true) {
+        while (true) {
             System.out.println("진행하던 주문을 취소하시겠습니까?\n");
             System.out.println("1. 확인        2. 취소");
 
@@ -70,13 +73,14 @@ public class BasketUi {
             if (choice == 1) {
                 basket.clearBasket();
                 break;
-            } else if(choice == 2) {
+            } else if (choice == 2) {
                 break;
             } else {
                 printError();
             }
         }
     }
+
     public void printTotalSum() {
         System.out.println("--------------------------------------------");
         System.out.println("[ 총 판매금액 현황 ]");
@@ -95,18 +99,21 @@ public class BasketUi {
             throw new RuntimeException(e);
         }
     }
+
     public void addToBasket(Product product) {
         basket.addProduct(product);
     }
+
     public int getNumber() {
-        try  {
-           int choice = Integer.parseInt(in.readLine());
-           return choice;
+        try {
+            int choice = Integer.parseInt(in.readLine());
+            return choice;
         } catch (Exception e) {
             return -1;
         }
 
     }
+
     public void printError() {
         System.out.println("잘못된 입력입니다. 다시 시도해 주세요.");
         System.out.println("--------------------------------------------");

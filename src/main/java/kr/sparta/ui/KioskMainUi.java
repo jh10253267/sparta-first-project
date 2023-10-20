@@ -4,33 +4,23 @@ import kr.sparta.dao.KioskDAO;
 import kr.sparta.domain.Menu;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
 import java.util.List;
 
-public class KioskUi {
+public class KioskMainUi {
 
-    private BufferedReader in;
+    private final BufferedReader in;
     private KioskDAO dao = new KioskDAO();
     private List<Menu> menuList;
 
-    {
-        try {
-            menuList = dao.selectAllCategory();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private KioskUi() {
+    private KioskMainUi() {
         this.in = new BufferedReader(new InputStreamReader(System.in));
-
     }
 
-    private static KioskUi instance = new KioskUi();
+    private static final KioskMainUi instance = new KioskMainUi();
 
-    public static KioskUi getInstance() {
+    public static KioskMainUi getInstance() {
         return instance;
     }
 
@@ -41,7 +31,7 @@ public class KioskUi {
         System.out.println("--------------------------------------------");
         System.out.println("**버거킹에 오신것을 환영합니다.**");
         System.out.println("아래 메뉴판을 보시고 메뉴를 골라 입력해주세요. \n");
-        System.out.println("[ BURGERKING MENU ]");
+        System.out.println("[ BURGER KING MENU ]");
         for (Menu m : menuList) {
             ++index;
             System.out.printf("%d. %-10s| %s\n", index, m.getName(), m.getDescription());

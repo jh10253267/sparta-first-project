@@ -1,21 +1,22 @@
 package kr.sparta.ui;
 
 import kr.sparta.domain.Product;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class PurchaseUi {
+public class AddToBasketConfirmUi {
 
     private BasketUi basketUi = BasketUi.getInstance();
     private BufferedReader in;
 
-    private PurchaseUi() {
+    private AddToBasketConfirmUi() {
         in = new BufferedReader(new InputStreamReader(System.in));
     }
 
-    private static PurchaseUi instance = new PurchaseUi();
+    private static AddToBasketConfirmUi instance = new AddToBasketConfirmUi();
 
-    public static PurchaseUi getInstance() {
+    public static AddToBasketConfirmUi getInstance() {
         return instance;
     }
 
@@ -48,6 +49,7 @@ public class PurchaseUi {
             return -1;
         }
     }
+
     public void printError() {
         System.out.println("[ 잘못된 입력입니다. 다시 시도해 주세요. ]");
         System.out.println("--------------------------------------------");

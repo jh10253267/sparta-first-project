@@ -7,17 +7,10 @@ public class Product {
     private String name;
     private String description;
     private int price;
-    public int orderCount = 1;
-
-    public void initOrderCount() {
-        orderCount = 1;
-        System.out.println("init orderCount ");
-    }
+    private int orderCount = 1;
     public void plusOrderCount() {
         orderCount++;
     }
-
-
     public int getOrderCount() {
         return orderCount;
     }
