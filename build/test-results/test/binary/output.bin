@@ -1,0 +1,51 @@
+�11:41:24.207 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- Driver class org.mariadb.jdbc.Driver found in Thread context class loader jdk.internal.loader.ClassLoaders$AppClassLoader@1de0aca6
+a11:41:24.215 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- HikariPool-1 - configuration:
+i11:41:24.224 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- allowPoolSuspension.............false
+h11:41:24.225 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- autoCommit......................true
+h11:41:24.225 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- catalog.........................none
+h11:41:24.225 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- connectionInitSql...............none
+h11:41:24.226 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- connectionTestQuery.............none
+i11:41:24.227 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- connectionTimeout...............30000
+h11:41:24.227 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- dataSource......................none
+h11:41:24.228 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- dataSourceClassName.............none
+h11:41:24.228 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- dataSourceJNDI..................none
+w11:41:24.228 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- dataSourceProperties............{password=<masked>}
+}11:41:24.229 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- driverClassName................."org.mariadb.jdbc.Driver"
+h11:41:24.229 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- exceptionOverrideClassName......none
+f11:41:24.230 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- healthCheckProperties...........{}
+h11:41:24.230 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- healthCheckRegistry.............none
+j11:41:24.230 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- idleTimeout.....................600000
+e11:41:24.231 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- initializationFailTimeout.......1
+i11:41:24.231 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- isolateInternalQueries..........false
+�11:41:24.232 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- jdbcUrl.........................jdbc:mariadb://localhost:3306/kiosk
+e11:41:24.232 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- keepaliveTime...................0
+e11:41:24.232 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- leakDetectionThreshold..........0
+k11:41:24.233 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- maxLifetime.....................1800000
+f11:41:24.233 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- maximumPoolSize.................10
+h11:41:24.233 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- metricRegistry..................none
+h11:41:24.234 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- metricsTrackerFactory...........none
+f11:41:24.234 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- minimumIdle.....................10
+l11:41:24.234 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- password........................<masked>
+r11:41:24.234 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- poolName........................"HikariPool-1"
+i11:41:24.235 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- readOnly........................false
+i11:41:24.235 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- registerMbeans..................false
+h11:41:24.235 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- scheduledExecutor...............none
+h11:41:24.236 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- schema..........................none
+l11:41:24.236 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- threadFactory...................internal
+k11:41:24.236 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- transactionIsolation............default
+m11:41:24.236 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- username........................"webuser"
+h11:41:24.237 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig -- validationTimeout...............5000
+a11:41:24.245 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+i11:41:24.359 [Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket -- Database change: is 'kiosk'
+q11:41:24.360 [Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient -- execute query: SET NAMES utf8mb4
+�11:41:24.361 [Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket -- System variable change:  character_set_client = utf8mb4
+�11:41:24.361 [Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket -- System variable change:  character_set_connection = utf8mb4
+�11:41:24.361 [Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket -- System variable change:  character_set_results = utf8mb4
+}11:41:24.387 [Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient -- execute query: SELECT @@session.tx_isolation
+�11:41:24.392 [Test worker] INFO com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.mariadb.jdbc.Connection@27eedb64
+f11:41:24.394 [Test worker] INFO com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+�11:41:24.404 [Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient -- execute query: SELECT * FROM menu WHERE category_id = ?
+Tproduct{id=11, name='제로 콜라', description='제로 코카콜라', price=1100}
+Tproduct{id=12, name='제로 콜라', description='제로 코카콜라', price=1100}
+Rproduct{id=13, name='스프라이트', description='스프라이트', price=1100}
+`product{id=14, name='제로 스프라이트', description='제로 스프라이트', price=1100}
