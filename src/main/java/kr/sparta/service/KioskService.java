@@ -1,11 +1,6 @@
 package kr.sparta.service;
 
 import kr.sparta.dao.KioskDAO;
-import kr.sparta.domain.Menu;
-import kr.sparta.domain.Product;
-
-import java.sql.SQLException;
-import java.util.List;
 
 public enum KioskService {
     INSTANCE;

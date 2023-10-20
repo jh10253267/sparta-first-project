@@ -20,7 +20,5 @@ public class MenuTest {
         for(Product p : list2) {
             System.out.println(p);
         }
-
-
     }
 }

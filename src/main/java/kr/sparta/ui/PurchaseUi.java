@@ -1,11 +1,8 @@
 package kr.sparta.ui;
 
 import kr.sparta.domain.Product;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-
-//상품이 추가되는 시점에서 중복체크를 해야한다.
 
 public class PurchaseUi {
 
@@ -38,7 +35,7 @@ public class PurchaseUi {
             } else if (choice == 2) {
                 break;
             } else {
-                System.out.println("잘못된 입력입니다. 다시 시도해주세요.");
+                printError();
             }
         }
     }
@@ -50,6 +47,10 @@ public class PurchaseUi {
         } catch (Exception e) {
             return -1;
         }
+    }
+    public void printError() {
+        System.out.println("[ 잘못된 입력입니다. 다시 시도해 주세요. ]");
+        System.out.println("--------------------------------------------");
     }
 
 }

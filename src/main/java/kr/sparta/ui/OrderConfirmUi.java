@@ -1,17 +1,9 @@
 package kr.sparta.ui;
 
 import kr.sparta.dao.KioskDAO;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
-
-/**
- * 주문이 완료되었습니다!
- *
- * 대기번호는 [ 1 ] 번 입니다.
- * (3초후 메뉴판으로 돌아갑니다.)
- */
 
 public class OrderConfirmUi {
     private BufferedReader in;
@@ -34,6 +26,14 @@ public class OrderConfirmUi {
         System.out.println("주문 시각 : " + KioskDAO.getTime());
         System.out.println();
         System.out.println("(3초후 메뉴판으로 돌아갑니다.)");
-        Thread.sleep(3000);
+
+        Thread.sleep(600);
+        System.out.println();
+        System.out.println("3");
+        Thread.sleep(1000);
+        System.out.println("2");
+        Thread.sleep(1000);
+        System.out.println("1");
+        Thread.sleep(1000);
         }
 }

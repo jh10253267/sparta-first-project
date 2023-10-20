@@ -14,11 +14,14 @@ public class Kiosk {
         while_loop:
         while(true) {
             kioskUi.printMainMenu();
+
             int menuNumber = kioskUi.getNumber();
+
             String menuName = null;
             if(menuNumber > 0 && menuNumber < 5) {
                 menuName = kioskUi.getMenuName(menuNumber);
             }
+
             switch (menuNumber) {
                 case 0 :
                     basketUi.printTotalSum();
@@ -30,7 +33,7 @@ public class Kiosk {
                     kioskDetailUi.printDetailMenu(menuNumber, menuName);
                     break;
                 case 5:
-                    BasketUi.getInstance().printMyBasket();
+                    basketUi.printMyBasket();
                     break;
                 case 6:
                     basketUi.clear();

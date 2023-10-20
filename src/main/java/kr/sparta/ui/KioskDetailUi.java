@@ -24,16 +24,13 @@ import java.util.List;
 public class KioskDetailUi {
     private static BufferedReader in;
     PurchaseUi purchaseUi = PurchaseUi.getInstance();
-    BasketUi basketUi = BasketUi.getInstance();
     private static KioskDAO dao = new KioskDAO();
     private static List<Product> productList;
 
     private KioskDetailUi() {
         in = new BufferedReader(new InputStreamReader(System.in));
     }
-
     private static KioskDetailUi instance = new KioskDetailUi();
-
     public static KioskDetailUi getInstance() {
         return instance;
     }
@@ -58,7 +55,7 @@ public class KioskDetailUi {
                 purchaseUi.printPurchasePage(productList.get(choice - 1));
                 break;
             } else {
-                System.out.println("잘못된 입력입니다. 다시 시도해주세요.");
+                printError();
             }
         }
 
@@ -71,6 +68,10 @@ public class KioskDetailUi {
         } catch (IOException e) {
             return -1;
         }
+    }
+    public void printError() {
+        System.out.println("잘못된 입력입니다. 다시 시도해 주세요.");
+        System.out.println("--------------------------------------------");
     }
 
 
