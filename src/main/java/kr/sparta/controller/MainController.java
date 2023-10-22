@@ -20,7 +20,7 @@ import java.util.List;
  */
 
 @WebServlet("/kiosk")
-public class InputController extends HttpServlet {
+public class MainController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         KioskDAO dao = new KioskDAO();
