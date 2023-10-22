@@ -26,8 +26,8 @@ public class KioskMainUi {
 
     public void printMainMenu() throws SQLException {
         menuList = dao.selectAllCategory();
-
         int index = 0;
+
         System.out.println("--------------------------------------------");
         System.out.println("**버거킹에 오신것을 환영합니다.**");
         System.out.println("아래 메뉴판을 보시고 메뉴를 골라 입력해주세요. \n");
@@ -37,7 +37,7 @@ public class KioskMainUi {
             System.out.printf("%d. %-10s| %s\n", index, m.getName(), m.getDescription());
         }
         System.out.println();
-        System.out.println("[ ODER MENU ]");
+        System.out.println("[ ORDER MENU ]");
         System.out.println("5.장바구니 보기");
         System.out.println("6.주문 초기화");
         System.out.println("9.프로그램 종료");

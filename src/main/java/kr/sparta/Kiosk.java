@@ -25,7 +25,7 @@ public class Kiosk {
 
             switch (menuNumber) {
                 case 0:
-                    basketUi.printTotalSum();
+                    basketUi.printTotalSoldProduct();
                     break;
                 case 1:
                 case 2:

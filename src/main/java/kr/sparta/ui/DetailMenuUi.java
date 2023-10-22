@@ -3,7 +3,7 @@ package kr.sparta.ui;
 
 import kr.sparta.dao.KioskDAO;
 import kr.sparta.domain.Product;
-
+import kr.sparta.util.PriceParser;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,7 +12,8 @@ import java.util.List;
 
 public class DetailMenuUi {
     private static BufferedReader in;
-    AddToBasketConfirmUi purchaseUi = AddToBasketConfirmUi.getInstance();
+    AddToBasketConfirmUi addToBasketConfirmUi = AddToBasketConfirmUi.getInstance();
+    private final PriceParser priceParser = PriceParser.getInstance();
     private KioskDAO dao = new KioskDAO();
 
 
@@ -37,13 +38,13 @@ public class DetailMenuUi {
             System.out.printf("[ %s ]\n", menuName);
             for (Product p : productList) {
                 ++index;
-                System.out.printf("%d. %-15s  | W %d | %s\n", index, p.getName(), p.getPrice(), p.getDescription());
+                System.out.printf("%d. %-15s  | W %s | %s\n", index, p.getName(), priceParser.parsePrice(p.getPrice()), p.getDescription());
             }
             System.out.println();
             System.out.println("--------------------------------------------");
             int choice = getNumber();
             if (index >= choice && choice >= 1) {
-                purchaseUi.printPurchasePage(productList.get(choice - 1));
+                addToBasketConfirmUi.printPurchasePage(productList.get(choice - 1));
                 break;
             } else {
                 printError();

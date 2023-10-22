@@ -1,20 +1,22 @@
 package kr.sparta.ui;
 
 import kr.sparta.domain.Product;
+import kr.sparta.util.PriceParser;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class AddToBasketConfirmUi {
 
-    private BasketUi basketUi = BasketUi.getInstance();
-    private BufferedReader in;
+    private final BasketUi basketUi = BasketUi.getInstance();
+    private final BufferedReader in;
+    private PriceParser priceParser = PriceParser.getInstance();
 
     private AddToBasketConfirmUi() {
         in = new BufferedReader(new InputStreamReader(System.in));
     }
 
-    private static AddToBasketConfirmUi instance = new AddToBasketConfirmUi();
+    private static final AddToBasketConfirmUi instance = new AddToBasketConfirmUi();
 
     public static AddToBasketConfirmUi getInstance() {
         return instance;
@@ -24,7 +26,7 @@ public class AddToBasketConfirmUi {
 
         while (true) {
             System.out.println("--------------------------------------------");
-            System.out.printf("%-10s     | W %d | %s\n", product.getName(), product.getPrice(), product.getDescription());
+            System.out.printf("%-10s     | W %s | %s\n", product.getName(), priceParser.parsePrice(product.getPrice()), product.getDescription());
             System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
             System.out.println("1. 확인        2. 취소");
             System.out.println("--------------------------------------------");

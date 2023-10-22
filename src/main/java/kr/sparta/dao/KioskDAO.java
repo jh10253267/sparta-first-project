@@ -3,8 +3,6 @@ package kr.sparta.dao;
 import kr.sparta.domain.Menu;
 import kr.sparta.domain.Product;
 import lombok.Cleanup;
-import org.checkerframework.checker.units.qual.C;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

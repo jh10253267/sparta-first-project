@@ -1,16 +1,14 @@
 package kr.sparta.util;
 
-import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
-public class ParseInt {
+public class PriceParser {
 
-    private ParseInt() {
-
+    private PriceParser() {
     }
-    private static ParseInt instance = new ParseInt();
+    private static final PriceParser instance = new PriceParser();
 
-    public static ParseInt getInstance() {
+    public static PriceParser getInstance() {
         return instance;
     }
     public static String parsePrice(int price) {
