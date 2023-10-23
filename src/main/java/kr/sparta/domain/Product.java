@@ -1,6 +1,5 @@
 package kr.sparta.domain;
 
-import java.util.Objects;
 
 public class Product {
     private Long id;

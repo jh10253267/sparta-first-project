@@ -12,7 +12,7 @@ import java.util.List;
 
 public class DetailMenuUi {
     private static BufferedReader in;
-    AddToBasketConfirmUi addToBasketConfirmUi = AddToBasketConfirmUi.getInstance();
+    private AddToBasketConfirmUi addToBasketConfirmUi = AddToBasketConfirmUi.getInstance();
     private final PriceParser priceParser = PriceParser.getInstance();
     private KioskDAO dao = new KioskDAO();
 
